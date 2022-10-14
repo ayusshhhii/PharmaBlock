@@ -8,12 +8,11 @@
     tools:context=".UserAdminSelection">
 
 
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="133dp"
+        android:layout_marginStart="112dp"
         android:layout_marginTop="180dp"
         android:text="new non existing layout "
         android:textColor="@color/black"
@@ -25,13 +24,17 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
-        android:layout_marginTop="158dp"
-        android:text="Logout"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="196dp"
         android:onClick="onClick"
+        android:text="Logout  (not working .. check this)"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.129" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
