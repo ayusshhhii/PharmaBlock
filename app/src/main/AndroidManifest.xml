@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmaBlock">
-        <activity android:name=".UserAdminSelection"></activity>
+        <activity android:name=".Consumer.ConsumerHome"></activity>
+        <activity android:name=".Retailer.RetailerHome" />
+        <activity android:name=".Distributor.DistributorHome" />
+        <activity android:name=".Producer.ProducerHome" />
+        <activity android:name=".UserAdminSelection" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"

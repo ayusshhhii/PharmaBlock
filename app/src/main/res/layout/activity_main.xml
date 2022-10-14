@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="#6991E0"
     tools:context=".MainActivity">
 
 
@@ -27,22 +27,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="40dp"
         android:backgroundTint="#FFFFFF"
         android:drawablePadding="20dp"
         android:ems="10"
-        android:background="@color/white"
         android:hint="Name"
         android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColor="#726E6E"
-        android:textColorHighlight="#454343"
-        android:textColorHint="#726E6E"
+        android:textColor="#F3E9E9"
+        android:textColorHighlight="#F3E9E9"
+        android:textColorHint="#F3E9E9"
         android:textSize="14sp"
+
+
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -63,14 +64,13 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColor="#726E6E"
-        android:textColorHighlight="#454343"
-        android:textColorHint="#726E6E"
+        android:textColor="#F3E9E9"
+        android:textColorHighlight="#F3E9E9"
+        android:textColorHint="#F3E9E9"
         android:textSize="14sp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/login_email"
         app:layout_constraintStart_toStartOf="@+id/login_email"
-        app:layout_constraintTop_toBottomOf="@+id/login_email"/>
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
     <EditText
         android:id="@+id/signuppassword"
@@ -88,11 +88,10 @@
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp"
-        android:textColor="#726E6E"
-        android:textColorHighlight="#454343"
-        android:textColorHint="#726E6E"
+        android:textColor="#F3E9E9"
+        android:textColorHighlight="#F3E9E9"
+        android:textColorHint="#F3E9E9"
         android:textSize="14sp"
-        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/login_pass"
         app:layout_constraintStart_toStartOf="@+id/login_pass"
         app:layout_constraintTop_toBottomOf="@+id/login_pass" />
@@ -112,7 +111,8 @@
         android:text="Get Started"
         android:textAllCaps="false"
         android:textSize="16dp"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textColor="#6991E0"
         app:layout_constraintEnd_toEndOf="@+id/signuppassword"
         app:layout_constraintStart_toStartOf="@+id/signuppassword"
         app:layout_constraintTop_toBottomOf="@+id/signuppassword" />
