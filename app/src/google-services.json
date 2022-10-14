@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "137548054382",
+    "project_id": "pharmablock-26b5c",
+    "storage_bucket": "pharmablock-26b5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137548054382:android:b63ee778a53f3bce204b7f",
+        "android_client_info": {
+          "package_name": "com.example.pharmablock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137548054382-ccaa9kruqeu9hg8vrloln5dn3r7ceah1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACcSJPcSSKqM1oM_DEb-S8sMWEg9E9-Wg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137548054382-ccaa9kruqeu9hg8vrloln5dn3r7ceah1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
