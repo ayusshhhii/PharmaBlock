@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pharmablock">
 
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmaBlock">
-        <activity android:name=".Consumer.ConsumerHome"></activity>
+        <activity android:name=".Producer.Qrscanner"></activity>
+        <activity android:name=".Consumer.ConsumerHome" />
         <activity android:name=".Retailer.RetailerHome" />
         <activity android:name=".Distributor.DistributorHome" />
         <activity android:name=".Producer.ProducerHome" />
         <activity android:name=".UserAdminSelection" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             >
             <intent-filter>

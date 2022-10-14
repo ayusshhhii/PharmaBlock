@@ -24,7 +24,7 @@ public class UserAdminSelection extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Switch aSwitch;
-    Button t1;
+    Button logoutbtn;
     LinearLayout producertxt, distributortxt, retailertxt, consumertxt;
 
     @Override
@@ -37,13 +37,14 @@ public class UserAdminSelection extends AppCompatActivity {
         mAuth=FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        t1=(Button)findViewById(R.id.logout);
+        logoutbtn=(Button)findViewById(R.id.logout);
 
-        t1.setOnClickListener(new View.OnClickListener() {
+        logoutbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(UserAdminSelection.this, "hey", Toast.LENGTH_SHORT).show();
                 mAuth.signOut();
+                startActivity(new Intent(UserAdminSelection.this,LoginActivity.class));
             }
         });
 
