@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Producer.ProducerDetails">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:text="Edit product details"
+            android:textColor="@color/black"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+
+
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/manufacturingcompany"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Manufacturing copmany"
+            android:inputType="textPersonName"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Date of manufacturing"
+            android:inputType="date"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/costofproduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Cost per product"
+            android:inputType="number"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/amountofproduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Amount in (g)"
+            android:inputType="number"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/productdescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Product description"
+            android:inputType="number"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/contactnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Contact number"
+            android:inputType="number"
+            android:paddingLeft="40dp"
+            android:paddingTop="20dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="20dp"
+            android:textColor="#726E6E"
+            android:textColorHighlight="#454343"
+            android:textColorHint="#726E6E"
+            android:textSize="14sp" />
+
+
+        <Button
+            android:id="@+id/donedetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/vehicletype"
+            android:layout_alignStart="@+id/vehicletype"
+            android:layout_alignEnd="@+id/vehicletype"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#6991E0"
+            android:textColor="@color/white"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:text="Done"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

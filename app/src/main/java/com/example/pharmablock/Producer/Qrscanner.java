@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -69,7 +70,7 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
                     public void onComplete(@NonNull @NotNull Task<Void> task) {
 //                        ProducerHome.qrtexttv.setText("data added successfully");
                         Toast.makeText(Qrscanner.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
-                        onBackPressed();
+                        startActivity(new Intent(getApplicationContext(), ProducerDetails.class));
                     }
                 });
 
