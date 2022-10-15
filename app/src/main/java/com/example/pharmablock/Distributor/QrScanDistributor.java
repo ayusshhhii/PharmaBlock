@@ -82,7 +82,7 @@ public class QrScanDistributor extends AppCompatActivity implements ZXingScanner
         for(int i=0; i<dis_arr.size(); i++){
             if(dis_data.equals(dis_arr.get(i))){
                 Toast.makeText(this, "verified", Toast.LENGTH_SHORT).show();
-                break;
+                //startActivity(new Intent(QrScanDistributor.this, DistributorDetails.class));
             }
             else{
                 Toast.makeText(this, "not verified", Toast.LENGTH_SHORT).show();
