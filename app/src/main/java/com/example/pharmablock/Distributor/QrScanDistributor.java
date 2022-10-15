@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class QrScanDistributor extends AppCompatActivity implements ZXingScannerView.ResultHandler{
@@ -36,6 +39,7 @@ public class QrScanDistributor extends AppCompatActivity implements ZXingScanner
     DatabaseReference dbref;
     private FirebaseAuth mAuth;
     public int hashcheck;
+    public static ArrayList<String> dis_arr;
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,7 @@ public class QrScanDistributor extends AppCompatActivity implements ZXingScanner
        dbref= FirebaseDatabase.getInstance().getReference();
 
        hashcheck= ProducerDetails.hashvalue;
+       dis_arr= Qrscanner.arr;
 
        Dexter.withContext(getApplicationContext())
                .withPermission(Manifest.permission.CAMERA)
@@ -73,12 +78,15 @@ public class QrScanDistributor extends AppCompatActivity implements ZXingScanner
 
     @Override
     public void handleResult(Result rawResult) {
-        String data = rawResult.getText().toString();
-        if(data.equals(hashcheck)){
-            Toast.makeText(this, "verified", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            Toast.makeText(this, "not verified", Toast.LENGTH_SHORT).show();
+        String dis_data = rawResult.getText().toString();
+        for(int i=0; i<dis_arr.size(); i++){
+            if(dis_data.equals(dis_arr.get(i))){
+                Toast.makeText(this, "verified", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            else{
+                Toast.makeText(this, "not verified", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }

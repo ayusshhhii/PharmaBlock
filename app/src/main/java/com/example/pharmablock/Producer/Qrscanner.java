@@ -24,6 +24,8 @@ import com.karumi.dexter.listener.single.PermissionListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
 public class Qrscanner extends AppCompatActivity implements ZXingScannerView.ResultHandler
@@ -31,6 +33,7 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
 
     public static String id;
     public static String medicinename;
+    public static ArrayList<String> arr;
 
 
     ZXingScannerView scannerView;
@@ -47,6 +50,8 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
         mAuth=FirebaseAuth.getInstance();
 
         dbref= FirebaseDatabase.getInstance().getReference();
+
+        arr= new ArrayList<>();
 
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)
@@ -79,6 +84,8 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
                     @Override
                     public void onComplete(@NonNull @NotNull Task<Void> task) {
 //                        ProducerHome.qrtexttv.setText("data added successfully");
+
+                        arr.add(data);
                         Toast.makeText(Qrscanner.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Qrscanner.this, ProducerDetails.class);
                         i.putExtra("key",id);

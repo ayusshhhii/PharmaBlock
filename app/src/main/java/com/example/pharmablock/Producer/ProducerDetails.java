@@ -209,6 +209,7 @@ public class ProducerDetails extends AppCompatActivity {
                 dbref.setValue(detailsModel);
                 Toast.makeText(ProducerDetails.this, "Details added", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(ProducerDetails.this, DetailsAdded.class));
+
             }
 
             @Override
