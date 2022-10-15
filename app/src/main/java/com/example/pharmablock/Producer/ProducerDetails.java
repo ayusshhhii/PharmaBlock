@@ -3,6 +3,7 @@ package com.example.pharmablock.Producer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -202,6 +203,7 @@ public class ProducerDetails extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dbref.setValue(detailsModel);
                 Toast.makeText(ProducerDetails.this, "Details added", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(ProducerDetails.this, DetailsAdded.class));
             }
 
             @Override
