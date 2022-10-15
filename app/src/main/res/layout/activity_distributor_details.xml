@@ -76,7 +76,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Description after quality check"
-            android:inputType="number"
+            android:inputType="text"
             android:paddingLeft="40dp"
             android:paddingTop="20dp"
             android:paddingRight="10dp"

@@ -33,12 +33,13 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
 
     public static String id;
     public static String medicinename;
-    public static ArrayList<String> arr;
+    public static ArrayList<String> medarr = new ArrayList<String>();;
 
 
     ZXingScannerView scannerView;
-    DatabaseReference dbref;
+    public static DatabaseReference dbref , dbref_arr;
     private FirebaseAuth mAuth;
+    FirebaseDatabase firebaseDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +51,9 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
         mAuth=FirebaseAuth.getInstance();
 
         dbref= FirebaseDatabase.getInstance().getReference();
+        dbref_arr=FirebaseDatabase.getInstance().getReference("Medicines");
 
-        arr= new ArrayList<>();
+//        medarr= new ArrayList<>();
 
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)
@@ -83,9 +85,8 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull @NotNull Task<Void> task) {
-//                        ProducerHome.qrtexttv.setText("data added successfully");
-
-                        arr.add(data);
+                        medarr.add(data);
+                        dbref_arr.setValue(medarr);
                         Toast.makeText(Qrscanner.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Qrscanner.this, ProducerDetails.class);
                         i.putExtra("key",id);
