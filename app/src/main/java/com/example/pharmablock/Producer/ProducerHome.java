@@ -30,7 +30,6 @@ public class ProducerHome extends AppCompatActivity {
         scanbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 startActivity(new Intent(ProducerHome.this , Qrscanner.class));
             }
         });

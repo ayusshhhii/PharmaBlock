@@ -2,9 +2,18 @@ package com.example.pharmablock.Models;
 
 public class DetailsModel {
     private  String name, date, cost, amt, desc, cont, mname;
+    private int hashvalue;
 
     public DetailsModel(){
 
+    }
+
+    public int getHashvalue() {
+        return hashvalue;
+    }
+
+    public void setHashvalue(int hashvalue) {
+        this.hashvalue = hashvalue;
     }
 
     public String getName() {

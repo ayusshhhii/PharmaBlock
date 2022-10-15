@@ -35,9 +35,12 @@ public class ProducerDetails extends AppCompatActivity {
     public String value;
     public String medname;
 
+    public static String hashstring;
+    public static int hashvalue;
+
     FirebaseDatabase firebaseDatabase;
     private FirebaseAuth mAuth;
-    DatabaseReference dbref, dbrefname, dbrefdate, dbrefcost, dbrefamt, dbrefdesc, dbrefcont, dbrefmname;
+    DatabaseReference dbref, dbrefname, dbrefdate, dbrefcost, dbrefamt, dbrefdesc, dbrefcont, dbrefmname, dbrefcode;
 
     DetailsModel detailsModel;
 
@@ -57,6 +60,8 @@ public class ProducerDetails extends AppCompatActivity {
         description=(EditText)findViewById(R.id.productdescription);
         contact=(EditText)findViewById(R.id.contactnumber);
         medname= Qrscanner.medicinename;
+        hashstring= medname;
+        hashvalue=hashstring.hashCode();
 
         detailupload=(Button)findViewById(R.id.donedetails);
 
@@ -78,6 +83,7 @@ public class ProducerDetails extends AppCompatActivity {
         dbrefcont = firebaseDatabase.getReference("Producer").child(mAuth.getCurrentUser().getUid()).child("Details").child("Company_contact");
 
         dbrefmname = firebaseDatabase.getReference("Producer").child(mAuth.getCurrentUser().getUid()).child("Details").child("Medicine_name");
+        dbrefcode= firebaseDatabase.getReference("Producer").child(mAuth.getCurrentUser().getUid()).child("Details").child("Hash_code");
 
         detailsModel= new DetailsModel();
 
@@ -178,8 +184,6 @@ public class ProducerDetails extends AppCompatActivity {
         String pcont= contact.getText().toString();
 
 
-        String comb= pname+pcost+pamount;
-        int hashvalue= comb.hashCode();
 
         if(TextUtils.isEmpty(pname) && TextUtils.isEmpty(pcont) && TextUtils.isEmpty(pamount) && TextUtils.isEmpty(pdate) && TextUtils.isEmpty(pdesc)){
             Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
@@ -197,6 +201,7 @@ public class ProducerDetails extends AppCompatActivity {
         detailsModel.setDesc(pdesc);
         detailsModel.setCont(pcont);
         detailsModel.setMname(medname);
+        detailsModel.setHashvalue(hashvalue);
 
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
