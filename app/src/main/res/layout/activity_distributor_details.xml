@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Producer.ProducerDetails">
+    tools:context=".Distributor.DistributorDetails">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,21 +23,21 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
-            android:text="Edit product details"
+            android:text="Add your details"
             android:textColor="@color/black"
             android:textSize="28dp"
             android:textStyle="bold" />
 
 
         <EditText
-            android:id="@+id/manufacturingcompany"
+            android:id="@+id/distributorcompany"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:padding="20dp"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:hint="Manufacturing company"
+            android:hint="Distributor company name"
             android:inputType="textPersonName"
             android:paddingLeft="40dp"
             android:paddingTop="20dp"
@@ -49,14 +49,14 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/date"
+            android:id="@+id/datedist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:padding="20dp"
             android:drawablePadding="10dp"
             android:ems="10"
-            android:hint="Date of manufacturing"
+            android:hint="Date of pick up"
             android:inputType="date"
             android:paddingLeft="40dp"
             android:paddingTop="20dp"
@@ -68,14 +68,14 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/costofproduct"
+            android:id="@+id/productdescriptiondist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
             android:drawablePadding="10dp"
             android:layout_marginTop="20dp"
             android:ems="10"
-            android:hint="Cost per product"
+            android:hint="Description after quality check"
             android:inputType="number"
             android:paddingLeft="40dp"
             android:paddingTop="20dp"
@@ -87,45 +87,7 @@
             android:textSize="14sp" />
 
         <EditText
-            android:id="@+id/amountofproduct"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:drawablePadding="10dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Amount in (g)"
-            android:inputType="number"
-            android:paddingLeft="40dp"
-            android:paddingTop="20dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="20dp"
-            android:textColor="#726E6E"
-            android:textColorHighlight="#454343"
-            android:textColorHint="#726E6E"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/productdescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            android:drawablePadding="10dp"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Product description"
-            android:inputType="number"
-            android:paddingLeft="40dp"
-            android:paddingTop="20dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="20dp"
-            android:textColor="#726E6E"
-            android:textColorHighlight="#454343"
-            android:textColorHint="#726E6E"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/contactnumber"
+            android:id="@+id/contactnumberdist"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="20dp"
@@ -143,25 +105,60 @@
             android:textColorHint="#726E6E"
             android:textSize="14sp" />
 
-
-        <Button
-            android:id="@+id/donedetails"
+        <GridLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/vehicletype"
-            android:layout_alignStart="@+id/vehicletype"
-            android:layout_alignEnd="@+id/vehicletype"
-            android:layout_marginTop="40dp"
-            android:backgroundTint="#6991E0"
-            android:textColor="@color/white"
-            android:paddingTop="20dp"
-            android:paddingBottom="20dp"
-            android:text="Done"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textSize="16dp" />
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="#FFFFFF"
+            android:columnCount="2"
+            android:rowCount="1">
+
+            <Button
+                android:id="@+id/distdetails1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_columnWeight="2"
+                android:layout_marginEnd="10dp"
+                android:layout_below="@+id/vehicletype"
+                android:layout_alignStart="@+id/vehicletype"
+                android:layout_alignEnd="@+id/vehicletype"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#6991E0"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="Back"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/distdetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_columnWeight="2"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/vehicletype"
+                android:layout_alignStart="@+id/vehicletype"
+                android:layout_alignEnd="@+id/vehicletype"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="#6991E0"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:text="Submit"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </GridLayout>
 
     </LinearLayout>
+
+
 
 
 

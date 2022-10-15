@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.example.pharmablock.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.Result;
@@ -28,8 +29,13 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 public class Qrscanner extends AppCompatActivity implements ZXingScannerView.ResultHandler
 {
 
+    public static String id;
+    public static String medicinename;
+
+
     ZXingScannerView scannerView;
     DatabaseReference dbref;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +43,10 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
         scannerView=new ZXingScannerView(this);
         setContentView(scannerView);
 
-        dbref= FirebaseDatabase.getInstance().getReference("Producer");
+
+        mAuth=FirebaseAuth.getInstance();
+
+        dbref= FirebaseDatabase.getInstance().getReference();
 
         Dexter.withContext(getApplicationContext())
                 .withPermission(Manifest.permission.CAMERA)
@@ -63,14 +72,17 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
     @Override
     public void handleResult(Result rawResult) {
         String data = rawResult.getText().toString();
-
-        dbref.push().setValue(data)
+        medicinename=data;
+        id= dbref.push().getKey();
+        dbref.child("Producer").child(mAuth.getCurrentUser().getUid()).child(id).setValue(data)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull @NotNull Task<Void> task) {
 //                        ProducerHome.qrtexttv.setText("data added successfully");
                         Toast.makeText(Qrscanner.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(), ProducerDetails.class));
+                        Intent i = new Intent(Qrscanner.this, ProducerDetails.class);
+                        i.putExtra("key",id);
+                        startActivity(i);
                     }
                 });
 
