@@ -36,6 +36,26 @@
         android:textColor="#9C9A9A"
         android:text="- Date" />
 
+    <TextView
+        android:id="@+id/productbought"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:layout_marginLeft="40dp"
+        android:textStyle="italic"
+        android:textColor="#9C9A9A"
+        android:text="- Product Bought " />
+
+    <TextView
+        android:id="@+id/datebought"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="290dp"
+        android:layout_marginLeft="40dp"
+        android:textStyle="italic"
+        android:textColor="#9C9A9A"
+        android:text="- Date" />
+
 
 
 

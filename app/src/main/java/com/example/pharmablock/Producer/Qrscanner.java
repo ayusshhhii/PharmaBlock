@@ -33,7 +33,7 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
 
     public static String id;
     public static String medicinename;
-    public static ArrayList<String> medarr = new ArrayList<String>();;
+    public static ArrayList<String> medarr = new ArrayList<String>();
 
 
     ZXingScannerView scannerView;
@@ -86,7 +86,7 @@ public class Qrscanner extends AppCompatActivity implements ZXingScannerView.Res
                     @Override
                     public void onComplete(@NonNull @NotNull Task<Void> task) {
                         medarr.add(data);
-                        dbref_arr.setValue(medarr);
+//                        dbref_arr.setValue(medarr);
                         Toast.makeText(Qrscanner.this, "Product Added Successfully", Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(Qrscanner.this, ProducerDetails.class);
                         i.putExtra("key",id);

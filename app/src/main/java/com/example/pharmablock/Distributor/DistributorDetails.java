@@ -148,7 +148,7 @@ public class DistributorDetails extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 dbref.setValue(distributordetailsModel);
                 Toast.makeText(DistributorDetails.this, "Details added", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(DistributorDetails.this, DetailsAdded.class));
+                startActivity(new Intent(DistributorDetails.this, DetailsAdded_Distributor.class));
 
             }
 

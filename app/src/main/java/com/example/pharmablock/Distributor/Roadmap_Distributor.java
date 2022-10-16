@@ -1,4 +1,4 @@
-package com.example.pharmablock.Producer;
+package com.example.pharmablock.Distributor;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -9,10 +9,9 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.baoyachi.stepview.VerticalStepView;
+import com.example.pharmablock.Producer.Roadmap;
 import com.example.pharmablock.R;
 import com.example.pharmablock.UserAdminSelection;
-
-import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,31 +20,37 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class Roadmap extends AppCompatActivity {
+public class Roadmap_Distributor extends AppCompatActivity {
 
     VerticalStepView verticalStepView;
 
-    TextView dateadded;
+    TextView dateadded , datebought;
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(Roadmap.this , UserAdminSelection.class));
+        startActivity(new Intent(Roadmap_Distributor.this , UserAdminSelection.class));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_roadmap);
+        setContentView(R.layout.activity_roadmap_distributor);
+
 
         verticalStepView=(VerticalStepView)findViewById(R.id.verticalStepView);
         dateadded=(TextView)findViewById(R.id.date);
+        datebought=(TextView)findViewById(R.id.datebought);
 
         Date c = Calendar.getInstance().getTime();
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
         String formattedDate = df.format(c);
         dateadded.setText("-Date " +formattedDate);
+
+        datebought.setText(("-Date bought " +formattedDate));
+
+
 
 
         List<String> sources = new ArrayList<>();
@@ -57,7 +62,7 @@ public class Roadmap extends AppCompatActivity {
         sources.add("Consumer");
 
         int n=sources.size();
-        verticalStepView.setStepsViewIndicatorComplectingPosition(n-3)
+        verticalStepView.setStepsViewIndicatorComplectingPosition(n-2)
                 .reverseDraw(false)
                 .setStepViewTexts(sources)
                 .setLinePaddingProportion(3.85f)
@@ -72,5 +77,4 @@ public class Roadmap extends AppCompatActivity {
 
 
     }
-
-}
+    }

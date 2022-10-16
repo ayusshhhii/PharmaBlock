@@ -93,38 +93,38 @@ public class QrScanDistributor extends AppCompatActivity implements ZXingScanner
         String dis_data = rawResult.getText().toString();
 
 
-        dbref_disarr
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                            Medicines medicines=snapshot.getValue(Medicines.class);
-                            if(medicines.equals(dis_data)){
-                                Toast.makeText(QrScanDistributor.this, "Verfied verified", Toast.LENGTH_SHORT).show();
-                                break;
-                            }else{
-                                Toast.makeText(QrScanDistributor.this, "Not verified", Toast.LENGTH_SHORT).show();
-                            }
+//        dbref_disarr
+//                .addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                            Medicines medicines=snapshot.getValue(Medicines.class);
+//                            if(medicines.equals(dis_data)){
+//                                Toast.makeText(QrScanDistributor.this, "Verfied verified", Toast.LENGTH_SHORT).show();
+//                                break;
+//                            }else{
+//                                Toast.makeText(QrScanDistributor.this, "Not verified", Toast.LENGTH_SHORT).show();
+//                            }
+//
+//                        }
+//                    }
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//                    }
+//                });
 
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
 
 
-
-//        for(int i=0; i<dis_arr.size(); i++){
-//            if(dis_data.equals(dis_arr.get(i))){
-//                Toast.makeText(this, "verified", Toast.LENGTH_SHORT).show();
-////                startActivity(new Intent(QrScanDistributor.this, DistributorDetails.class));
-//            }
-//            else{
-//                startActivity(new Intent(QrScanDistributor.this , UserAdminSelection.class));
-//                Toast.makeText(this, "not verified", Toast.LENGTH_SHORT).show();
-//            }
-//        }
+        for(int i=0; i<dis_arr.size(); i++){
+            if(dis_data.equals(dis_arr.get(i))){
+                Toast.makeText(this, "verified", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(QrScanDistributor.this, DistributorDetails.class));
+            }
+            else{
+                startActivity(new Intent(QrScanDistributor.this , UserAdminSelection.class));
+                Toast.makeText(this, "not verified", Toast.LENGTH_SHORT).show();
+            }
+        }
 
     }
 

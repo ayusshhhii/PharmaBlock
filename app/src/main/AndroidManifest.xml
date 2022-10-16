@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PharmaBlock">
-        <activity android:name=".Producer.Roadmap"></activity>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".Distributor.DetailsAdded_Distributor" />
+        <activity android:name=".Producer.Roadmap" />
         <activity android:name=".Producer.DetailsAdded" />
         <activity android:name=".Distributor.DistributorDetails" />
         <activity android:name=".Producer.ProducerDetails" />
@@ -25,7 +27,7 @@
         <activity android:name=".UserAdminSelection" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Distributor.Roadmap_Distributor"
             android:exported="true">
             >
             <intent-filter>
